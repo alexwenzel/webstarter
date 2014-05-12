@@ -22,7 +22,11 @@ Manually download webstarter or clone it. Run ``composer install`` inside the ta
 
 ## Configuration
 
-Docs: http://silex.sensiolabs.org/doc/usage.html#global-configuration
+The file ``app/config.php`` will be included during bootstrap. Put there any value you like.
+
+In your template, you can use ``{{ config.debug }}``.
+
+Silex debug: http://silex.sensiolabs.org/doc/usage.html#global-configuration
 
 ## Routing
 
@@ -44,14 +48,14 @@ $app->get('/hallo', function () use ($app){
 
 ### Automatic routing
 
-__If no manual route is found__, the automatic routing will look inside ``app/views/pages`` for existing files which match the URI.
+__If no manual route is found__, the automatic routing will look inside ``views/pages`` for existing files which match the URI.
 
 If there is no matching URI, the request results in a 404.
 
 __Example:__
 
 Request: ``http://webstarter.de/my/page``
-File: ``app/views/pages/my/page.php``
+File: ``views/pages/my/page.php``
 
 ### Named routes
 

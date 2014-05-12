@@ -6,11 +6,17 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Webstarter {
 
-	private $settings = array();
+	private $config = array();
 
 	public function __construct($app, array $settings)
 	{
-		$app['debug'] = $settings['debug'];
+		$config = array();
+
+		include_once trim($settings['apppath'], '\/').'/config.php';
+
+		$app['debug'] = $config['debug'];
+
+		$this->config = $config;
 	}
 
 	public function twig($app, array $config)
@@ -67,7 +73,9 @@ class Webstarter {
 			// check for pages
 			if ( file_exists($config['pagedir'].'/'.$uri.'.php') )
 			{
-				return $app['twig']->render('/pages/'.$uri.'.php', array());
+				return $app['twig']->render('/pages/'.$uri.'.php', array(
+					'config' => $this->config,
+				));
 			}
 
 			throw new NotFoundHttpException("Page not found");

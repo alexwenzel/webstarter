@@ -3,7 +3,6 @@
 /**
  * constants
  */
-define('DEBUG', false);
 define('BASEPATH', __DIR__);
 
 /**
@@ -22,8 +21,7 @@ $app = new Silex\Application();
 $app['webstarter'] = $app->share(function ($app) {
 
     return new Webstarter\Webstarter($app, array(
-		'root' 	=> BASEPATH,
-		'debug'	=> DEBUG,
+		'apppath' 	=> BASEPATH.'/app',
 	));
 });
 
