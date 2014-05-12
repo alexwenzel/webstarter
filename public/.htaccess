@@ -1,0 +1,46 @@
+# Erlaube alle Requests in diesem Ordner
+Allow from all
+
+# Kompatibilitätsmodus für IE
+Header set X-UA-Compatible "IE=Edge,chrome=1"
+
+<IfModule mod_expires.c>
+  #Expire Header
+  ExpiresActive On
+  ExpiresDefault A0
+
+  # Set gif, png, jpg, jpeg to expire after 7 days.
+  ExpiresByType image/gif A604800
+  ExpiresByType image/png A604800
+  ExpiresByType image/jpg A604800
+  ExpiresByType image/jpeg A604800
+  ExpiresByType image/ico A604800
+
+  # Set css and javascript to expire after 1 day.
+  # These tend to change more regularly it's a good idea to update this to longer
+  # once you've established your site content!
+  ExpiresByType text/css A86400
+  ExpiresByType text/javascript A86400
+</IfModule>
+
+<IfModule mod_deflate.c>
+  # Compress plaintext, html, xml, and css files
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+
+  # Other filetypes that you can compress
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>

@@ -1,0 +1,22 @@
+{
+    "name": "alexwenzel/webstarter",
+    "description": "web bundle - silex, twig, less, boilerplate, jquery",
+    "license": "GPL 3",
+    "authors": [
+        {
+            "name": "alexwenzel",
+            "email": "alexander.wenzel.berlin@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "~1.1",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/twig-bridge": "2.4.*@dev",
+        "leafo/lessphp": "0.4.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Webstarter": "."
+        }
+    }
+}
