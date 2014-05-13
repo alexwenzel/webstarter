@@ -32,19 +32,28 @@ Silex debug: http://silex.sensiolabs.org/doc/usage.html#global-configuration
 
 Webstarter has manual and automatic routing.
 
-Docs: http://silex.sensiolabs.org/doc/usage.html#routing
+Silex docs: http://silex.sensiolabs.org/doc/usage.html#routing
 
 ### Manual routing
 
-Manuelle Routen werden in ``app/routes.php`` definiert.
+Manual routes are defined in ``app/routes.php``.
 
-Beispiel einer manuellen Route:
-
+Example:
 ````
-$app->get('/hallo', function () use ($app){
-    return 'Hallo Starterprojekt!';
+$app->get('/hello', function () use ($app){
+    // any code here
 });
 ````
+
+Render a custom template:
+````
+$app->get('/hello', function () use ($app){
+    return $app['twig']->render('/hello.php');
+});
+````
+
+Manual routes override the automatic routing behaviour.
+
 
 ### Automatic routing
 
@@ -78,7 +87,7 @@ Output:
 http://webstarter.de/subpage/login
 ````
 
-Docs: http://silex.sensiolabs.org/doc/providers/url_generator.html
+Silex docs: http://silex.sensiolabs.org/doc/providers/url_generator.html
 
 ## Error handling
 
@@ -86,7 +95,7 @@ You can handle application errors individually in ``app/errors.php``.
 
 Error handling is only excecuted if the debug flag is ``false``.
 
-Docs: http://silex.sensiolabs.org/doc/usage.html#error-handlers
+Silex docs: http://silex.sensiolabs.org/doc/usage.html#error-handlers
 
 ## Twig Template Engine
 
@@ -107,7 +116,7 @@ Call a function:
 {{ public() }}
 ````
 
-Docs: http://twig.sensiolabs.org/doc/templates.html#variables
+Twig docs: http://twig.sensiolabs.org/doc/templates.html#variables
 
 ### Control structures
 
@@ -132,7 +141,7 @@ For in:
 {% endfor %}
 ````
 
-Docs: http://twig.sensiolabs.org/doc/templates.html#control-structure
+Twig docs: http://twig.sensiolabs.org/doc/templates.html#control-structure
 
 #### public()
 
@@ -146,7 +155,7 @@ Docs: http://twig.sensiolabs.org/doc/templates.html#control-structure
 
 #### url()
 
-Siehe: http://silex.sensiolabs.org/doc/providers/url_generator.html
+Silex docs: http://silex.sensiolabs.org/doc/providers/url_generator.html
 
 ## LessPHP
 
