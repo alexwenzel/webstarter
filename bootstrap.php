@@ -20,7 +20,7 @@ $app = new Silex\Application();
  */
 $app['webstarter'] = $app->share(function ($app) {
 
-    return new Webstarter\Webstarter($app, array(
+    return new webstarter\Webstarter($app, array(
 		'apppath' 	=> BASEPATH.'/app',
 	));
 });

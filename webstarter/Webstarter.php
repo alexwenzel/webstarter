@@ -1,4 +1,4 @@
-<?php namespace Webstarter;
+<?php namespace webstarter;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +12,7 @@ class Webstarter {
 	{
 		$config = array();
 
-		include_once trim($settings['apppath'], '\/').'/config.php';
+		include_once realpath($settings['apppath']).'/config.php';
 
 		$app['debug'] = $config['debug'];
 
@@ -79,6 +79,7 @@ class Webstarter {
 			}
 
 			throw new NotFoundHttpException("Page not found");
+
 		})->assert('url', '.*');
 	}
 }
