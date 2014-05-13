@@ -10,21 +10,23 @@
 
 Manually download webstarter or clone it. Run ``composer install`` inside the target location.
 
+Navigate to the public directory inside your browser.
+
 ## Structure
 
-``app/`` : contains app custom files
+``app/`` : contains app specific files
 
-``public/`` : is the document root and contains all public files
+``public/`` : the document root and contains all public accessible files
 
-``vendor/`` : contains all third party files
+``vendor/`` : contains composer packages, third party files
 
-``webstarter/`` : contains all webstarter files
+``webstarter/`` : this project files
 
 ## Configuration
 
 The file ``app/config.php`` will be included during bootstrap. Put there any value you like.
 
-In your template, you can use ``{{ config.debug }}``.
+In your template, you can use ``{{ config.value }}``.
 
 Silex debug: http://silex.sensiolabs.org/doc/usage.html#global-configuration
 
