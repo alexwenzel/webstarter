@@ -25,7 +25,7 @@
     <!-- Add your site or application content here -->
     {{ block('body') }}
 
-    <script src="{{ public('js/vendor/jquery-1.10.1.min.js') }}"></script>
+    <script src="{{ public('js/vendor/jquery-1.11.1.min.js') }}"></script>
     <script src="{{ public('js/main.js') }}"></script>
   </body>
 </html>
