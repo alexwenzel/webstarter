@@ -1,10 +1,10 @@
 ## Components
 
-  * Silex - PHP micro framework [docs](http://silex.sensiolabs.org/)
-  * Twig - PHP template engine [docs](http://twig.sensiolabs.org/)
-  * LessPHP - PHP Less interpreter [docs](https://github.com/leafo/lessphp)
-  * HTML5 Boilerplate - HTML starter [docs](http://html5boilerplate.com/)
-  * JQuery - javascript DOM manipulation [docs](http://jquery.com/)
+  * Silex - PHP micro framework [docs](http://silex.sensiolabs.org/) (1.2)
+  * Twig - PHP template engine [docs](http://twig.sensiolabs.org/) (1.8-2.0)
+  * LessPHP - PHP Less interpreter [docs](https://github.com/leafo/lessphp) (0.4.*)
+  * HTML5 Boilerplate - HTML starter [docs](http://html5boilerplate.com/) (4.3.0)
+  * JQuery - javascript DOM manipulation [docs](http://jquery.com/) (1.11.1)
 
 ## Installation
 
@@ -14,13 +14,15 @@ Navigate to the public directory inside your browser.
 
 ## Structure
 
-``app/`` : contains app specific files
+``app/`` : contains app behaviour and settings
 
-``public/`` : the document root and contains all public accessible files
+``public/`` : document root and contains all public accessible files
+
+``src/`` : contains app classes
 
 ``vendor/`` : contains composer packages, third party files
 
-``webstarter/`` : this project files
+``views/`` : contains app views
 
 ## Configuration
 
